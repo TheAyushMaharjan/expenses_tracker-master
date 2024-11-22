@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 class PieChartScreen extends StatefulWidget {
-  const PieChartScreen({Key? key}) : super(key: key);
+  const PieChartScreen({super.key});
 
   @override
   _PieChartScreenState createState() => _PieChartScreenState();
@@ -99,11 +99,11 @@ class _PieChartScreenState extends State<PieChartScreen> {
           ),
           const SizedBox(height: 20),
           Text(
-            "Total Income: \Rs. ${totalIncome.toStringAsFixed(2)}",
+            "Total Income: Rs. ${totalIncome.toStringAsFixed(2)}",
             style: const TextStyle(fontSize: 16),
           ),
           Text(
-            "Total Expense: \Rs. ${totalExpense.toStringAsFixed(2)}",
+            "Total Expense: Rs. ${totalExpense.toStringAsFixed(2)}",
             style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 20),
@@ -132,7 +132,7 @@ class _PieChartScreenState extends State<PieChartScreen> {
                         style: TextStyle(color: isIncome ? Colors.green : Colors.red),
                       ),
                       subtitle: Text(
-                          "Category: ${note['category']}\nAmount: \Rs. ${note['amount'].toStringAsFixed(2)}"),
+                          "Category: ${note['category']}\nAmount: Rs. ${note['amount'].toStringAsFixed(2)}"),
                     );
                   },
                 );

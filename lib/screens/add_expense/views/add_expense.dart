@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; // Import Firestore
@@ -38,7 +37,7 @@ class _AddExpenseState extends State<AddExpense> {
     // Validate input
     if (amount.isEmpty || note.isEmpty || date.isEmpty || category.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Please fill in all fields")),
+        const SnackBar(content: Text("Please fill in all fields")),
       );
       return;
     }
@@ -49,7 +48,7 @@ class _AddExpenseState extends State<AddExpense> {
 
     if (userId == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("User not logged in")),
+        const SnackBar(content: Text("User not logged in")),
       );
       return;
     }
@@ -140,7 +139,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.blue),
                     ),
                     hintText: 'Select Type',
                   ),
@@ -175,7 +174,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.blue),
                     ),
                     hintText: '0',
                     hintStyle: TextStyle(
@@ -213,7 +212,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.blue),
                     ),
                     hintText: 'Title',
                     hintStyle: TextStyle(
@@ -250,7 +249,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.blue),
                     ),
                     hintText: 'Category',
                     hintStyle: TextStyle(
@@ -303,7 +302,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: const BorderSide(color: Colors.blue),
                     ),
                     hintText: 'Date',
                     hintStyle: TextStyle(

@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'LoginPage.dart'; // Import GetX for navigation
 
 class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
+
   @override
   _SignUpPageState createState() => _SignUpPageState();
 }
@@ -59,15 +61,15 @@ class _SignUpPageState extends State<SignUpPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Success'),
-          content: Text('Account created successfully!'),
+          title: const Text('Success'),
+          content: const Text('Account created successfully!'),
           actions: [
             TextButton(
               onPressed: () {
                 Get.back(); // Close the dialog
-                Get.to(() => LoginPage()); // Navigate to the login page
+                Get.to(() => const LoginPage()); // Navigate to the login page
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );
@@ -79,23 +81,23 @@ class _SignUpPageState extends State<SignUpPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Create an Account',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Sign up to get started!',
                 style: TextStyle(
@@ -103,7 +105,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   color: Colors.grey[600],
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               TextField(
                 controller: _usernameController,
                 decoration: InputDecoration(
@@ -115,7 +117,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   fillColor: Colors.grey[100],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -127,7 +129,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   fillColor: Colors.grey[100],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextField(
                 controller: _phoneController,
                 decoration: InputDecoration(
@@ -139,7 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   fillColor: Colors.grey[100],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextField(
                 controller: _passwordController,
                 decoration: InputDecoration(
@@ -152,23 +154,23 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 obscureText: true,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _signUp,
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                   child: _isLoading
-                      ? CircularProgressIndicator(
+                      ? const CircularProgressIndicator(
                     color: Colors.white,
                     strokeWidth: 2,
                   )
-                      : Text(
+                      : const Text(
                     'Sign Up',
                     style: TextStyle(
                       fontSize: 16,

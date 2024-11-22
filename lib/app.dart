@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginPage(), // Directly navigate to LoginPage
+      home: const LoginPage(), // Directly navigate to LoginPage
     );
   }
 }

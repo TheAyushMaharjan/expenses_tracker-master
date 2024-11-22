@@ -38,6 +38,10 @@ dependencies:
 
   fl_chart: any
   firebase_core: ^3.8.0
+  get: any
+  intl: any
+  cloud_firestore: any
+  firebase_auth: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

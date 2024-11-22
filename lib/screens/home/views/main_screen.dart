@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:expenses_tracker/screens/home/views/SettingPage.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -164,10 +165,15 @@ class _MainScreenState extends State<MainScreen> {
                           ],
                         ),
                         IconButton(
-                          onPressed: () {},
-                          icon:
-                          const Icon(Icons.settings, color: Colors.grey),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const SettingsPage()),
+                            );
+                          },
+                          icon: const Icon(Icons.settings, color: Colors.grey),
                         ),
+
                       ],
                     ),
                     const SizedBox(height: 24),
@@ -182,7 +188,7 @@ class _MainScreenState extends State<MainScreen> {
                           end: Alignment.bottomRight,
                         ),
                         borderRadius: BorderRadius.circular(16),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black26,
                             blurRadius: 10,
@@ -196,18 +202,18 @@ class _MainScreenState extends State<MainScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text(
+                                Text(
                                   'Total Balance',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
                                   ),
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.credit_card,
                                   color: Colors.white,
                                 ),
@@ -287,6 +293,27 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // Space between the items
+                    children: [
+                      const Text(
+                        'Particular',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                        ),
+                      ),
+                      const Text(
+                        'Debit/Credit',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+
+
                     // Transaction List with Swipe-to-Delete
                     ...selectedDetails.map(
                           (transaction) => Dismissible(
@@ -354,7 +381,7 @@ class _MainScreenState extends State<MainScreen> {
                                 flex: 1,
                                 child: Center(
                                   child: Text(
-                                    '${(transaction['date'] as Timestamp).toDate().toString().split(' ')[0]}',
+                                    (transaction['date'] as Timestamp).toDate().toString().split(' ')[0],
                                     style: TextStyle(
                                       fontSize: 12.0,
                                       color: Colors.grey.shade600,

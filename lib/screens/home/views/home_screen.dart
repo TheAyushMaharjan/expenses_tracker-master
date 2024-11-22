@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../stats/chart.dart';
-import '../../stats/stats.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

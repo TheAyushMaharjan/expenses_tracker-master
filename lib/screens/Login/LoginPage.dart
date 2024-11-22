@@ -5,6 +5,8 @@ import '../home/views/home_screen.dart'; // Import the HomeScreen (make sure you
 import 'SignUpPage.dart';
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -37,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
       );
 
       // On successful login, navigate to the HomeScreen
-      Get.off(() => HomeScreen());
+      Get.off(() => const HomeScreen());
     } catch (e) {
       // Handle error during login
       print('Error: $e');
@@ -68,19 +70,19 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: const Text('Login'),
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.blueAccent,
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Title
-              Text(
+              const Text(
                 'Welcome Back!',
                 style: TextStyle(
                   fontSize: 28,
@@ -88,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.blueAccent,
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
 
               // Form for email and password
               Form(
@@ -101,8 +103,8 @@ class _LoginPageState extends State<LoginPage> {
                       controller: _emailController,
                       decoration: InputDecoration(
                         labelText: 'Email',
-                        prefixIcon: Icon(Icons.email),
-                        border: OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.email),
+                        border: const OutlineInputBorder(),
                         filled: true,
                         fillColor: Colors.grey[200],
                       ),
@@ -117,15 +119,15 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
 
                     // Password TextField
                     TextFormField(
                       controller: _passwordController,
                       decoration: InputDecoration(
                         labelText: 'Password',
-                        prefixIcon: Icon(Icons.lock),
-                        border: OutlineInputBorder(),
+                        prefixIcon: const Icon(Icons.lock),
+                        border: const OutlineInputBorder(),
                         filled: true,
                         fillColor: Colors.grey[200],
                       ),
@@ -137,31 +139,31 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Login Button
                     _isLoading
-                        ? Center(child: CircularProgressIndicator()) // Show loading spinner
+                        ? const Center(child: CircularProgressIndicator()) // Show loading spinner
                         : ElevatedButton(
                       onPressed: _login,
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 16),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
                         backgroundColor: Colors.blueAccent,
                       ),
-                      child: Text(
+                      child: const Text(
                         'Login',
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Forgot password link
                     TextButton(
                       onPressed: _forgotPassword,
-                      child: Text('Forgot Password?', style: TextStyle(color: Colors.blueAccent)),
+                      child: const Text('Forgot Password?', style: TextStyle(color: Colors.blueAccent)),
                     ),
                   ],
                 ),
@@ -170,9 +172,9 @@ class _LoginPageState extends State<LoginPage> {
               // Create a New Account button
               TextButton(
                 onPressed: () {
-                  Get.to(() => SignUpPage());
+                  Get.to(() => const SignUpPage());
                 },
-                child: Text('Create a New Account', style: TextStyle(color: Colors.blueAccent)),
+                child: const Text('Create a New Account', style: TextStyle(color: Colors.blueAccent)),
               ),
             ],
           ),
